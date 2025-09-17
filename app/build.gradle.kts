@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -41,7 +42,19 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.activity)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Room Database
+    implementation("androidx.room:room-runtime:2.8.0")
+    annotationProcessor("androidx.room:room-compiler:2.8.0")
+    implementation("androidx.room:room-ktx:2.8.0")
+
+
+    // LiveData & ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.9.3")
 }
